@@ -238,7 +238,10 @@ if [ ! -z "$plexToken" ]; then
     # Always update plex if extra is downloaded
     if [ "$updatePlex" == "true" ]; then
         log "Using PlexNotify.bash to update Plex...."
-        bash /config/extended/scripts/PlexNotify.bash "$itemPath"
+        log "itemPath was "$itemPath""
+        itemPath2="${itemPath/\/data/\/storage\/620B-5E2D}"
+        log "itemPath2 is now "$itemPath2""
+        bash /config/extended/scripts/PlexNotify.bash "$itemPath2"
         exit
     fi
     
@@ -248,7 +251,10 @@ if [ ! -z "$plexToken" ]; then
         exit
     else
         log "Using PlexNotify.bash to update Plex...."
-        bash /config/extended/scripts/PlexNotify.bash "$itemPath"
+        log "itemPath was "$itemPath""
+        itemPath2="${itemPath/\/data/\/storage\/620B-5E2D}"
+        log "itemPath2 is now "$itemPath2""
+        bash /config/extended/scripts/PlexNotify.bash "$itemPath2"
         exit
     fi
 fi
