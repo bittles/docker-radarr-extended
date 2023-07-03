@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 scriptVersion="1.0.1"
 
+if [ "$enableStartupExtras" != "true" ]; then
+    log "Autoextras script disabled, exiting..."
+    log "Enable by setting enableStartupExtras=true"
+    exit
+fi
+
 if [ -z "$arrUrl" ] || [ -z "$arrApiKey" ]; then
   arrUrlBase="$(cat /config/config.xml | xq | jq -r .Config.UrlBase)"
   if [ "$arrUrlBase" == "null" ]; then
