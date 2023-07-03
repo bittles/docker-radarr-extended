@@ -5,9 +5,10 @@ if [ ! -d "/config/extended" ]; then
 	mkdir -p "/config/extended"
 fi
 
-# create scripts directory if missing
+# create scripts directory if missing and copy scripts over
 if [ ! -d "/config/extended/scripts" ]; then
 	mkdir -p "/config/extended/scripts"
+  cp -r /scripts/* /config/extended/scripts/
 #else # if not missing, remove all files in directory
 #	echo "Removing previous scripts..."
 #	rm -rf /config/extended/scripts/*
