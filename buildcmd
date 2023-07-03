@@ -1,0 +1,1 @@
+docker build -t bittles999/radarr-extended-custom -f arm64v8.dockerfile .
