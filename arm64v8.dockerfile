@@ -72,5 +72,5 @@ COPY root/ /
 WORKDIR /config
 
 # ports and volumes
-EXPOSE 7878
+# EXPOSE 7878
 VOLUME /config
